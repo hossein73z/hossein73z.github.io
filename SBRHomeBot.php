@@ -11,6 +11,8 @@ $update = json_decode($jsonReceive, true);
 $message = $update['message'];
 $callback_query = $update['callback_query'];
 
+file_put_contents("Texts/Received Update.txt", "Received Json:\n" . $jsonReceive);
+
 if (!empty($message)) {
     //Set Or SignUp User
     $from = $message['from'];
